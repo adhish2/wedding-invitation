@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6f1">
+  <title>Achuth & Adheena | Wedding Invitation</title>
+  <meta name="description" content="A personal wedding invitation for Achuth Rajendran and Adheena, December 26, 2026.">
+  <style>
+    :root {
+      --paper: #f8f6f1;
+      --ink: #292821;
+      --muted: #777366;
+      --accent: #9a835f;
+      --line: #ded8cc;
+      --white: #fffdf9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.6;
+    }
+    .page { max-width: 760px; margin: 0 auto; padding: 24px 20px 60px; }
+    .hero {
+      min-height: 90vh; display: flex; flex-direction: column; justify-content: center;
+      align-items: center; text-align: center; padding: 42px 20px;
+      border: 1px solid var(--line); margin-top: 12px; position: relative;
+      background: var(--white);
+    }
+    .eyebrow { text-transform: uppercase; letter-spacing: .25em; font-size: .72rem; color: var(--accent); }
+    h1, h2, .names, .ampersand { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    .names { font-size: clamp(2.7rem, 8vw, 5.4rem); line-height: 1.12; margin: 22px 0 4px; }
+    .ampersand { font-size: 2rem; color: var(--accent); margin: 8px 0; }
+    .intro { max-width: 440px; color: var(--muted); margin: 20px auto; }
+    .date { margin-top: 22px; letter-spacing: .08em; font-size: .95rem; }
+    .guest { margin-top: 32px; font-family: Georgia, serif; font-size: 1.15rem; }
+    .guest span { color: var(--accent); }
+    .ornament { width: 46px; height: 1px; background: var(--accent); margin: 18px auto; }
+    section { padding: 55px 12px 18px; text-align: center; }
+    h2 { font-size: 2rem; margin: 10px 0 16px; }
+    .small { color: var(--muted); font-size: .92rem; }
+    .countdown { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 26px 0; }
+    .timebox { min-width: 84px; padding: 15px 10px; border: 1px solid var(--line); background: var(--white); }
+    .timebox strong { display: block; font: 2rem Georgia, serif; color: var(--accent); }
+    .timebox span { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .panel { background: var(--white); border: 1px solid var(--line); padding: 28px 20px; margin: 18px 0; }
+    .button {
+      display: inline-block; border: 1px solid var(--accent); color: var(--ink);
+      text-decoration: none; padding: 12px 22px; margin: 8px 5px;
+      font-size: .85rem; letter-spacing: .04em; background: transparent; cursor: pointer;
+    }
+    .button.primary { background: var(--accent); color: white; }
+    .button:hover { opacity: .82; }
+    .footer { text-align: center; padding-top: 42px; color: var(--muted); font-size: .78rem; }
+    .hidden { display: none; }
+
+    .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 24px 0; }
+    .gallery img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; border: 1px solid var(--line); background: var(--white); }
+    .gallery .wide { grid-column: 1 / -1; }
+    @media (max-width: 480px) { .gallery { gap: 8px; } .gallery img { min-height: 160px; } }
+
+    @media (max-width: 480px) { .page { padding: 12px; } .hero { min-height: 82vh; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">A celebration of love</div>
+      <div class="guest" id="guestGreeting">Dear Guest,</div>
+      <p class="intro">Together with our families, we warmly invite you to celebrate our wedding.</p>
+      <div class="ornament"></div>
+      <div class="names">Achuth Rajendran</div>
+      <div class="ampersand">&amp;</div>
+      <div class="names">Adheena</div>
+      <div class="date">SATURDAY · 26 DECEMBER 2026</div>
+      <p class="small" style="margin-top:24px">We would be delighted to have you with us.</p>
+      <a class="button primary" href="#details">Explore invitation</a>
+    </header>
+
+    <section id="details">
+      <div class="eyebrow">Save the date</div>
+      <h2>Our special day</h2>
+      <p>Saturday, December 26, 2026</p>
+      <p class="small">Wedding venue details will be shared soon.</p>
+      <div class="countdown" aria-label="Countdown to wedding">
+        <div class="timebox"><strong id="days">--</strong><span>Days</span></div>
+        <div class="timebox"><strong id="hours">--</strong><span>Hours</span></div>
+        <div class="timebox"><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div class="timebox"><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+
+    <section id="photos">
+      <div class="eyebrow">A few moments together</div>
+      <h2>Our photographs</h2>
+      <p class="small">A little glimpse of our story.</p>
+      <div class="gallery">
+        <img class="wide" src="126939.jpg" alt="Achuth and Adheena together outdoors" loading="lazy">
+        <img src="126940.jpg" alt="Achuth and Adheena sharing a moment" loading="lazy">
+        <img src="126936.jpg" alt="Illustrated portrait of Achuth and Adheena" loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Wedding location</div>
+      <h2>Malayil House</h2>
+      <p>Kannankara</p>
+      <div class="panel">
+        <p class="small">We look forward to welcoming you at Malayil House, Kannankara.</p>
+        <a class="button primary" id="mapButton" href="https://goo.gl/maps/52ePc4ZcYWk6WqUM7" target="_blank" rel="noopener noreferrer">Get Google Maps directions</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Kindly respond</div>
+      <h2>RSVP</h2>
+      <p class="small">Please let us know if you’ll be joining us.</p>
+      <div class="panel">
+        <p id="rsvpGuest">Dear Guest, we’d love to hear from you.</p>
+        <button class="button primary" id="yesButton">Joyfully accept</button>
+        <button class="button" id="noButton">Regretfully decline</button>
+        <p class="small" id="rsvpNote">RSVP message preparation is available for now. WhatsApp RSVP will be added once the contact number is provided.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">With love</div>
+      <h2>We can’t wait to celebrate with you.</h2>
+      <p class="small">Your presence will make our day even more special.</p>
+    </section>
+
+    <footer class="footer">
+      ACHUTH RAJENDRAN &amp; ADHEENA<br>
+      26 · 12 · 2026
+    </footer>
+  </main>
+
+  <script>
+    // Personalise using a link like: ?guest=Abin
+    const params = new URLSearchParams(window.location.search);
+    const guestName = (params.get("guest") || "").trim();
+    const safeName = guestName.replace(/[<>]/g, "");
+    if (safeName) {
+      document.getElementById("guestGreeting").innerHTML = "Dear <span></span>,";
+      document.querySelector("#guestGreeting span").textContent = safeName;
+      document.getElementById("rsvpGuest").textContent = `Dear ${safeName}, please let us know if you can join us.`;
+    }
+
+    // Countdown uses the wedding date at midnight in the visitor's local timezone.
+    const weddingDate = new Date(2026, 11, 26, 0, 0, 0);
+    function updateCountdown() {
+      const diff = weddingDate.getTime() - Date.now();
+      if (diff <= 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById("days").textContent = d;
+      document.getElementById("hours").textContent = h;
+      document.getElementById("minutes").textContent = m;
+      document.getElementById("seconds").textContent = s;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // RSVP works immediately via email draft. Replace the email below with your RSVP email.
+    const rsvpEmail = ""; // Example: "yourname@example.com"
+    function sendRsvp(answer) {
+      const guest = safeName || "Guest";
+      const subject = encodeURIComponent("Wedding RSVP — Achuth & Adheena");
+      const body = encodeURIComponent(`Hello Achuth and Adheena,\n\n${guest} ${answer} your wedding invitation on 26 December 2026.\n\nBest wishes!`);
+      if (rsvpEmail) {
+        window.location.href = `mailto:${rsvpEmail}?subject=${subject}&body=${body}`;
+      } else {
+        const message = `Hello Achuth and Adheena! ${guest} ${answer} your wedding invitation on 26 December 2026.`;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(message).then(() => {
+            document.getElementById("rsvpNote").textContent = "RSVP message copied! Please send it to the couple once their contact details are available.";
+          }).catch(() => {
+            document.getElementById("rsvpNote").textContent = message;
+          });
+        } else {
+          document.getElementById("rsvpNote").textContent = message;
+        }
+      }
+    }
+    document.getElementById("yesButton").addEventListener("click", () => sendRsvp("joyfully accepts"));
+    document.getElementById("noButton").addEventListener("click", () => sendRsvp("regretfully declines"));
+  </script>
+</body>
+</html>
