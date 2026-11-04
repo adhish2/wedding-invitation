@@ -61,9 +61,186 @@
     @media (max-width: 480px) { .gallery { gap: 8px; } .gallery img { min-height: 160px; } }
 
     @media (max-width: 480px) { .page { padding: 12px; } .hero { min-height: 82vh; } }
+/* ENVELOPE OPENING SCREEN */
+
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--paper);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.envelope-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.envelope-content {
+  width: 100%;
+  max-width: 380px;
+}
+
+.envelope-heading {
+  font-family: Georgia, serif;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  margin-bottom: 35px;
+}
+
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  margin: 0 auto 35px;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #e8ddca;
+  border: 1px solid #cbbb9f;
+}
+
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  background: #d9c7aa;
+  clip-path: polygon(0 0, 50% 60%, 100% 0, 100% 100%, 0 100%);
+  z-index: 3;
+}
+
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  background: #cbb695;
+  clip-path: polygon(0 0, 100% 0, 50% 58%);
+  transform-origin: top;
+  transition: transform 0.9s ease;
+  z-index: 4;
+}
+
+.envelope-letter {
+  position: absolute;
+  background: var(--white);
+  width: 85%;
+  height: 85%;
+  left: 7.5%;
+  top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent);
+  font-family: Georgia, serif;
+  z-index: 2;
+  transition: transform 1s ease 0.4s;
+}
+
+.envelope-letter span {
+  font-size: 2rem;
+}
+
+.envelope-letter small {
+  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+}
+
+.envelope-seal {
+  position: absolute;
+  z-index: 5;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--accent);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  border: 2px solid #f2e6d1;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope.open .envelope-seal {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.envelope.open .envelope-letter {
+  transform: translateY(-100px);
+}
+
+.envelope-names {
+  font: 2rem Georgia, serif;
+  margin: 15px 0 3px;
+}
+
+.envelope-date {
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+}
+
+.envelope-hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+
+    
   </style>
 </head>
 <body>
+
+  <!-- Opening Envelope -->
+<div class="envelope-screen" id="envelopeScreen">
+  <div class="envelope-content">
+
+    <p class="envelope-heading">You are cordially invited</p>
+
+    <div class="envelope" id="envelope">
+      <div class="envelope-back"></div>
+
+      <div class="envelope-letter">
+        <span>A & A</span>
+        <small>Wedding Invitation</small>
+      </div>
+
+      <div class="envelope-flap"></div>
+      <div class="envelope-front"></div>
+      <div class="envelope-seal">A & A</div>
+    </div>
+
+    <p class="envelope-names">Achuth & Adheena</p>
+    <p class="envelope-date">26 December 2026</p>
+
+    <button class="button primary" id="openInvitation">
+      Open Invitation
+    </button>
+
+    <p class="envelope-hint">Tap the envelope to open</p>
+
+  </div>
+</div>
   <main class="page">
     <header class="hero">
       <div class="eyebrow">A celebration of love</div>
