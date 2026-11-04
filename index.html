@@ -64,10 +64,78 @@
     .footer { text-align: center; padding-top: 42px; color: var(--muted); font-size: .78rem; }
     .hidden { display: none; }
 
-    .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 24px 0; }
-    .gallery img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; border: 1px solid var(--line); background: var(--white); }
-    .gallery .wide { grid-column: 1 / -1; }
-    @media (max-width: 480px) { .gallery { gap: 8px; } .gallery img { min-height: 160px; } }
+    /* PREMIUM PHOTO SLIDER */
+
+.photo-slider {
+  position: relative;
+  max-width: 520px;
+  margin: 28px auto 12px;
+  overflow: hidden;
+  border: 5px solid #fffdf8;
+  outline: 1px solid #d8c49e;
+  box-shadow: 0 10px 30px rgba(70, 50, 20, 0.12);
+}
+
+.photo-track {
+  display: flex;
+  transition: transform 0.65s ease-in-out;
+}
+
+.photo-slide {
+  min-width: 100%;
+}
+
+.photo-slide img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5dac5;
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.9);
+  color: #9a835f;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.slider-arrow.prev { left: 12px; }
+.slider-arrow.next { right: 12px; }
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.slider-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #d8cdbb;
+  cursor: pointer;
+}
+
+.slider-dots button.active {
+  background: #b39762;
+  transform: scale(1.3);
+}
+
+@media (max-width: 480px) {
+  .photo-slide img {
+    height: 340px;
+  }
+}
 
     @media (max-width: 480px) { .page { padding: 12px; } .hero { min-height: 82vh; } }
 /* ENVELOPE OPENING SCREEN */
@@ -306,11 +374,30 @@
       <div class="eyebrow">A few moments together</div>
       <h2>Our photographs</h2>
       <p class="small">A little glimpse of our story.</p>
-      <div class="gallery">
-        <img class="wide" src="126939.jpg" alt="Achuth and Adheena together outdoors" loading="lazy">
-        <img src="126940.jpg" alt="Achuth and Adheena sharing a moment" loading="lazy">
-        <img src="126936.jpg" alt="Illustrated portrait of Achuth and Adheena" loading="lazy">
-      </div>
+    <div class="photo-slider" id="photoSlider">
+  <div class="photo-track" id="photoTrack">
+    <div class="photo-slide">
+      <img src="126939.jpg" alt="Achuth and Adheena together">
+    </div>
+
+    <div class="photo-slide">
+      <img src="126940.jpg" alt="Achuth and Adheena sharing a moment">
+    </div>
+
+    <div class="photo-slide">
+      <img src="126936.jpg" alt="Illustrated portrait of Achuth and Adheena">
+    </div>
+  </div>
+
+  <button class="slider-arrow prev" id="prevPhoto">&#10094;</button>
+  <button class="slider-arrow next" id="nextPhoto">&#10095;</button>
+</div>
+
+<div class="slider-dots" id="sliderDots">
+  <button class="active" data-slide="0"></button>
+  <button data-slide="1"></button>
+  <button data-slide="2"></button>
+</div>
     </section>
 
     <section>
@@ -423,6 +510,53 @@ openInvitation.addEventListener("click", () => {
 envelope.addEventListener("click", () => {
   openInvitation.click();
 });
+
+    // PHOTO SLIDER
+
+const photoTrack = document.getElementById("photoTrack");
+const photoSlides = document.querySelectorAll(".photo-slide");
+const photoDots = document.querySelectorAll("#sliderDots button");
+
+let currentPhoto = 0;
+
+function showPhoto(index) {
+  currentPhoto = (index + photoSlides.length) % photoSlides.length;
+
+  photoTrack.style.transform = `translateX(-${currentPhoto * 100}%)`;
+
+  photoDots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentPhoto);
+  });
+}
+
+document.getElementById("nextPhoto").addEventListener("click", () => {
+  showPhoto(currentPhoto + 1);
+});
+
+document.getElementById("prevPhoto").addEventListener("click", () => {
+  showPhoto(currentPhoto - 1);
+});
+
+photoDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => showPhoto(index));
+});
+
+// Mobile swipe support
+
+let touchStartX = 0;
+
+photoTrack.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+photoTrack.addEventListener("touchend", (e) => {
+  const touchEndX = e.changedTouches[0].screenX;
+  const difference = touchStartX - touchEndX;
+
+  if (Math.abs(difference) > 50) {
+    showPhoto(currentPhoto + (difference > 0 ? 1 : -1));
+  }
+}, { passive: true });
   </script>
 </body>
 </html>
