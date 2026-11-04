@@ -371,6 +371,25 @@
     }
     document.getElementById("yesButton").addEventListener("click", () => sendRsvp("joyfully accepts"));
     document.getElementById("noButton").addEventListener("click", () => sendRsvp("regretfully declines"));
+
+
+    // ENVELOPE OPENING ANIMATION
+
+const envelopeScreen = document.getElementById("envelopeScreen");
+const envelope = document.getElementById("envelope");
+const openInvitation = document.getElementById("openInvitation");
+
+openInvitation.addEventListener("click", () => {
+  envelope.classList.add("open");
+
+  setTimeout(() => {
+    envelopeScreen.classList.add("hide");
+  }, 1400);
+});
+
+envelope.addEventListener("click", () => {
+  openInvitation.click();
+});
   </script>
 </body>
 </html>
