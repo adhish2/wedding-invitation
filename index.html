@@ -305,10 +305,29 @@
   }
 }
 
+    .music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: #9a835f;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
     
   </style>
 </head>
 <body>
+
+  <audio id="backgroundMusic" loop>
+  <source src="music.m4a" type="audio/mp4">
+</audio>
 
   <!-- Opening Envelope -->
 <div class="envelope-screen" id="envelopeScreen">
@@ -432,6 +451,10 @@
       ACHUTH RAJENDRAN &amp; ADHEENA<br>
       26 · 12 · 2026
     </footer>
+
+    <button id="musicToggle" class="music-toggle">
+  ♫ Music On
+</button>
   </main>
 
   <script>
@@ -499,8 +522,14 @@ const envelopeScreen = document.getElementById("envelopeScreen");
 const envelope = document.getElementById("envelope");
 const openInvitation = document.getElementById("openInvitation");
 
+const backgroundMusic = document.getElementById("backgroundMusic");
+
 openInvitation.addEventListener("click", () => {
   envelope.classList.add("open");
+
+  backgroundMusic.play().catch(error => {
+    console.log("Music could not autoplay:", error);
+  });
 
   setTimeout(() => {
     envelopeScreen.classList.add("hide");
@@ -557,6 +586,18 @@ photoTrack.addEventListener("touchend", (e) => {
     showPhoto(currentPhoto + (difference > 0 ? 1 : -1));
   }
 }, { passive: true });
+
+    const musicToggle = document.getElementById("musicToggle");
+
+musicToggle.addEventListener("click", () => {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    musicToggle.textContent = "♫ Music On";
+  } else {
+    backgroundMusic.pause();
+    musicToggle.textContent = "♫ Music Off";
+  }
+});
   </script>
 </body>
 </html>
