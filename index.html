@@ -569,6 +569,91 @@
     padding: 42px 20px;
   }
 }
+    /* Premium Wedding Celebrations Design */
+
+#events {
+  position: relative;
+  padding: 65px 15px;
+  background: linear-gradient(to bottom, #f7f3eb, #f2eadc, #f7f3eb);
+}
+
+#events h2 {
+  font-family: Georgia, serif;
+  font-size: 2.5rem;
+  color: #806b48;
+  font-weight: normal;
+  margin: 12px 0;
+}
+
+#events h2::after {
+  content: "❦  ✧  ❦";
+  display: block;
+  font-size: 19px;
+  color: #b39762;
+  letter-spacing: 8px;
+  margin-top: 14px;
+}
+
+.event-card {
+  position: relative;
+  max-width: 520px;
+  margin: 35px auto;
+  padding: 45px 28px;
+  background: linear-gradient(145deg, #fffdf8, #f2e8d7);
+  border: 1px solid #c9ad79;
+  outline: 1px solid #dfcda9;
+  outline-offset: -8px;
+  box-shadow: 0 12px 30px rgba(105, 82, 45, .12);
+  border-radius: 3px;
+}
+
+.event-card::before {
+  content: "❦";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #b39762;
+  font-size: 25px;
+}
+
+.event-card h3 {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  color: #705a3c;
+  font-weight: normal;
+  margin: 20px 0;
+}
+
+.event-card .eyebrow {
+  color: #a68a56;
+  letter-spacing: .2em;
+}
+
+.event-time {
+  color: #a68a56;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  letter-spacing: .08em;
+}
+
+.event-venue {
+  color: #806b48;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  #events h2 {
+    font-size: 2rem;
+  }
+
+  .event-card {
+    padding: 42px 20px;
+  }
+}
 
     
   </style>
@@ -671,7 +756,7 @@
 
     <section id="events">
   <div class="eyebrow">Save the dates</div>
-  <h2>Wedding Celebrations</h2>
+  <h2>Details of the Blessed Days</h2>
   <p class="small">We would love to celebrate these special moments with you.</p>
 
   <div class="event-card">
