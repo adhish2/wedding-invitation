@@ -320,6 +320,48 @@
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
+    #events {
+  text-align: center;
+}
+
+.event-card {
+  max-width: 520px;
+  margin: 30px auto;
+  padding: 35px 25px;
+  background: linear-gradient(145deg, #fffdf8, #f5efe3);
+  border: 1px solid #d8c49e;
+  box-shadow: 0 8px 25px rgba(105, 82, 45, 0.08);
+  text-align: center;
+}
+
+.event-card h3 {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: normal;
+  color: #806b48;
+  margin: 15px 0;
+}
+
+.event-time {
+  font-size: 16px;
+  color: #806b48;
+  margin: 12px 0;
+}
+
+.event-venue {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  margin-top: 22px;
+  color: #292821;
+}
+
+@media (max-width: 480px) {
+  .event-card {
+    padding: 28px 18px;
+    margin: 22px auto;
+  }
+}
+
     
   </style>
 </head>
@@ -418,6 +460,29 @@
   <button data-slide="2"></button>
 </div>
     </section>
+
+    <section id="events">
+  <div class="eyebrow">Save the dates</div>
+  <h2>Wedding Celebrations</h2>
+  <p class="small">We would love to celebrate these special moments with you.</p>
+
+  <div class="event-card">
+    <div class="eyebrow">25 December 2026</div>
+    <h3>Wedding Reception</h3>
+    <p class="event-time">3:00 PM onwards</p>
+    <p class="event-venue">Bride's Home</p>
+    <p class="small">Kannankara, Chelannur</p>
+  </div>
+
+  <div class="event-card">
+    <div class="eyebrow">26 December 2026</div>
+    <h3>Wedding Ceremony</h3>
+    <p class="event-time">12:05 PM – 12:45 PM</p>
+    <p class="small">Muhurtham</p>
+    <p class="event-venue">Bride's Home</p>
+    <p class="small">Kannankara, Chelannur</p>
+  </div>
+</section>
 
     <section>
       <div class="eyebrow">Wedding location</div>
