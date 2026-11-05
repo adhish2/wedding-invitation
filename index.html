@@ -446,6 +446,129 @@
     padding: 30px 18px;
   }
 }
+    /* Premium Our Families Design */
+
+#family-blessings {
+  position: relative;
+  padding: 65px 15px;
+  background: linear-gradient(to bottom, #f7f3eb, #f2eadc, #f7f3eb);
+  overflow: hidden;
+}
+
+#family-blessings .eyebrow {
+  color: #a68a56;
+  letter-spacing: .3em;
+}
+
+#family-blessings h2 {
+  font-family: Georgia, serif;
+  font-size: 2.5rem;
+  color: #806b48;
+  margin: 12px 0 38px;
+}
+
+#family-blessings h2::after {
+  content: "❦  ✧  ❦";
+  display: block;
+  font-size: 19px;
+  color: #b39762;
+  letter-spacing: 8px;
+  margin-top: 14px;
+}
+
+.family-card {
+  position: relative;
+  max-width: 520px;
+  margin: 35px auto;
+  padding: 45px 28px;
+  background:
+    radial-gradient(ellipse at top, #fffdf8 0%, transparent 70%),
+    linear-gradient(145deg, #fffdf8, #f2e8d7);
+  border: 1px solid #c9ad79;
+  outline: 1px solid #dfcda9;
+  outline-offset: -8px;
+  box-shadow: 0 12px 30px rgba(105, 82, 45, .12);
+  border-radius: 3px;
+}
+
+.family-card::before {
+  content: "❦";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #b39762;
+  font-size: 25px;
+}
+
+.family-card::after {
+  content: "✧  ❦  ✧";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  color: #b39762;
+  font-size: 16px;
+  letter-spacing: 7px;
+}
+
+.family-label {
+  color: #a68a56;
+  font-size: .72rem;
+  letter-spacing: .25em;
+  margin: 18px 0;
+}
+
+.family-card h3 {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  color: #705a3c;
+  font-weight: normal;
+  margin: 15px 0;
+}
+
+.family-relation {
+  color: #827966;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.family-names {
+  color: #806b48;
+  font-family: Georgia, serif;
+  font-size: 1.12rem;
+  line-height: 1.9;
+}
+
+.family-divider {
+  width: 65%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #b39762, transparent);
+  margin: 28px auto;
+  position: relative;
+}
+
+.family-divider::after {
+  content: "✧";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f8f1e5;
+  color: #b39762;
+  padding: 0 12px;
+  font-size: 17px;
+}
+
+@media (max-width: 480px) {
+  #family-blessings h2 {
+    font-size: 2rem;
+  }
+
+  .family-card {
+    padding: 42px 20px;
+  }
+}
 
     
   </style>
