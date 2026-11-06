@@ -752,7 +752,7 @@
       <div class="eyebrow">Save the date</div>
       <h2>Our special day</h2>
       <p>Saturday, December 26, 2026</p>
-      <p class="small">Wedding venue details will be shared soon.</p>
+      
       <div class="countdown" aria-label="Countdown to wedding">
         <div class="timebox"><strong id="days">--</strong><span>Days</span></div>
         <div class="timebox"><strong id="hours">--</strong><span>Hours</span></div>
@@ -1049,7 +1049,10 @@ photoTrack.addEventListener("touchend", (e) => {
 
 musicToggle.addEventListener("click", () => {
   if (backgroundMusic.paused) {
-    backgroundMusic.play();
+    setTimeout(() => {
+      backgroundMusic.play();
+    }, 1000);
+
     musicToggle.textContent = "♫ Music On";
   } else {
     backgroundMusic.pause();
