@@ -753,6 +753,37 @@
     transform: translateY(-20px) rotate(25deg);
   }
 }
+    /* Gold ornament below invitation heading */
+.envelope-ornament {
+  color: #b39762;
+  font-size: 20px;
+  letter-spacing: 8px;
+  margin-top: -25px;
+  margin-bottom: 30px;
+}
+
+/* Floral envelope corner decorations */
+.envelope::before,
+.envelope::after {
+  position: absolute;
+  color: #a68a56;
+  font-size: 25px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.envelope::before {
+  content: "❧";
+  top: 8px;
+  left: 8px;
+}
+
+.envelope::after {
+  content: "❧";
+  top: 8px;
+  right: 8px;
+  transform: scaleX(-1);
+}
     
   </style>
 </head>
@@ -767,7 +798,9 @@
   <div class="envelope-content">
 
     <p class="envelope-heading">You are cordially invited</p>
-
+<div class="envelope-ornament">
+  ❦ <span>✧</span> ❦
+</div>
     <div class="envelope" id="envelope">
       <div class="envelope-back"></div>
 
@@ -780,10 +813,6 @@
       <div class="envelope-front"></div>
       <div class="envelope-seal">A & A</div>
     </div>
-
-    <p class="envelope-names">Achuth & Adheena</p>
-    <p class="envelope-date">26 December 2026</p>
-
     <button class="button primary" id="openInvitation">
       Open Invitation
     </button>
